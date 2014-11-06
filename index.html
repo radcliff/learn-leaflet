@@ -8,6 +8,7 @@
   <!-- ## Mapbox GL ## -->
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.4.0/mapbox-gl.css' rel='stylesheet' />
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.4.0/mapbox-gl.js'></script>
+	<script type="text/javascript" src='script.js'></script>
 
 
 	<style type="text/css">
@@ -17,48 +18,7 @@
 	</style>
 </head>
 <body>
+	<button onclick='flip()'>FLIP</button>
 	<div id="map"></div>
-
-	<script type="text/javascript">
-		mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcmxpbmdyYWRjbGlmZiIsImEiOiIxYlFFV19rIn0.6AHWkJQtrDolNlMjguMmCQ';
-
-		//check for browser support
-		if (!mapboxgl.util.supported()) {
-		  alert('Your browser does not support Mapbox GL');
-		} else {
-			var map = new mapboxgl.Map({
-			  container: 'map',
-			  //style: 'https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v6.json',
-			  style: 'https://www.mapbox.com/mapbox-gl-styles/styles/satellite-v6.json',
-			  center: [32.98754, -117.04367],
-			  zoom: 13,
-			  //disables pan and zoom
-			  //interactive: false,
-			});
-
-		}
-	</script>
-	
-	<!-- <script type="text/javascript">
-		var map = L.map('map', {scrollWheelZoom: false}).setView([32.98754, -117.04367], 13);
-		
-		L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {
-    	attribution: 'hello world',
-    	maxZoom: 18
-		}).addTo(map);
-
-		var marker = L.marker([32.97395, -117.02686]).addTo(map);
-
-		var popup = L.popup();
-
-		function onMapClick(e) {
-		    popup
-		        .setLatLng(e.latlng)
-		        .setContent("You clicked the map at " + e.latlng.toString())
-		        .openOn(map);
-		}
-
-		map.on('click', onMapClick);
-	</script> -->
 </body>
 </html>
